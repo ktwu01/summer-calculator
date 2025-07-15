@@ -868,14 +868,25 @@ const Index = () => {
             <p>© 2025 这b暑假放的值不值？  
               <Link2 className="h-4 w-4 inline-block mr-1" />
               <a
-                href="https://github.com/ktwu01/summer-calculator/"
+                href="https://github.com/ktwu01/summer-calculator/fork"
                 className="text-blue-600 hover:text-blue-800"
                 onClick={(e) => {
                   e.preventDefault();
                   copyUrlToClipboard();
                 }}
               >
-                https://github.com/ktwu01/summer-calculator/
+                如果觉得好用，请给项目点个⭐Star吧！
+              </a>
+            </p>
+            <p className="mt-2">
+              灵感来源于：
+              <a
+                href="https://worthjob.zippland.com/"
+                className="text-blue-600 hover:text-blue-800"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                "这b班上的值不值测算版"
               </a>
             </p>
           </footer>
