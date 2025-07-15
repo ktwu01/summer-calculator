@@ -820,17 +820,20 @@ const Index = () => {
           <CardContent>
             <div className="flex flex-wrap gap-2 justify-center">
               <Button className="bg-blue-500 hover:bg-blue-600 text-white">
-                1.直接截图 2.点击【复制链接】⬇️ 就可以分享到朋友圈啦
+                1.截图 2.复制链接⬇ 3.发布 就可以分享到小红薯和朋友圈啦
               </Button>
-              <FacebookShareButton url={shareUrl} quote={`我的暑假价值评分: ${summerValue} - ${scoreComment}`}>
-                <Button variant="outline">分享到 Facebook</Button>
-              </FacebookShareButton>
-              <TwitterShareButton url={shareUrl} title={`我的暑假价值评分: ${summerValue} - ${scoreComment}`}>
-                <Button variant="outline">分享到 Twitter</Button>
-              </TwitterShareButton>
               <WeiboShareButton url={shareUrl} title={`我的暑假价值评分: ${summerValue} - ${scoreComment}`}>
                 <Button variant="outline">分享到 微博</Button>
               </WeiboShareButton>
+
+              <FacebookShareButton url={shareUrl} quote={`我的暑假价值评分: ${summerValue} - ${scoreComment}`}>
+                <Button variant="outline">分享到 Facebook</Button>
+              </FacebookShareButton>
+              
+              <TwitterShareButton url={shareUrl} title={`我的暑假价值评分: ${summerValue} - ${scoreComment}`}>
+                <Button variant="outline">分享到 Twitter/X</Button>
+              </TwitterShareButton>
+
             </div>
           </CardContent>
         </Card>
