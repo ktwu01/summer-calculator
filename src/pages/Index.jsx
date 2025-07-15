@@ -271,9 +271,9 @@ const Index = () => {
     if (score >= 49 && score < 59) return "还行吧，至少没完全浪费";
     if (score >= 59 && score < 69) return "不错不错，有点东西";
     if (score >= 69 && score < 79) return "哇塞，你是暑假卷王吧";
-    if (score >= 79 && score < 89) return "你TMD真是个人才！";
-    if (score >= 89 && score < 99) return "你怎么不上天呢？";
-    return "神仙下凡辛苦了";
+    if (score >= 79 && score < 89) return "你怎么不上天呢？";
+    if (score >= 89 && score < 99) return "神仙下凡辛苦了";
+    return "你他娘的还真是个天才！";
   };
 
   const getNextMilestone = (score) => {
@@ -705,7 +705,7 @@ const Index = () => {
                       onChange={() => toggleAchievement('lottery')}
                       className="h-4 w-4"
                     />
-                    <span>中彩票1000万</span>
+                    <span>中彩票</span>
                   </label>
                   <label className="flex items-center gap-2 p-2 bg-white rounded-md shadow-sm">
                     <input
@@ -736,7 +736,7 @@ const Index = () => {
                 <div className="flex gap-2 mb-4">
                   <input
                     type="text"
-                    placeholder="添加你的暑假活动 (如: 实习、旅行、学习等)"
+                    placeholder="添加你的暑假活动 (如: 旅行、绕地球一坤圈、中彩票、交到新朋友等)"
                     value={newActivity}
                     onChange={(e) => setNewActivity(e.target.value)}
                     className="flex-1 px-3 py-2 border rounded-md shadow-sm"
@@ -799,7 +799,7 @@ const Index = () => {
           <CardContent>
             <div className="flex flex-wrap gap-2 justify-center">
               <Button className="bg-blue-500 hover:bg-blue-600 text-white">
-                分享到朋友圈
+                你直接截图就可以分享到朋友圈啦
               </Button>
               <FacebookShareButton url={shareUrl} quote={`我的暑假价值评分: ${summerValue} - ${scoreComment}`}>
                 <Button variant="outline">分享到 Facebook</Button>
