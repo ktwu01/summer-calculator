@@ -555,14 +555,9 @@ const Index = () => {
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-purple-50 py-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
         {/* 导航栏 */}
-        <div className="flex justify-between items-center mb-8">
-          <h1 className="text-3xl font-bold text-blue-800">你的暑假值不值</h1>
-          <div className="flex gap-2">
-            <Button variant="outline" size="sm">
-              <Clock className="mr-2 h-4 w-4" />
-              校历
-            </Button>
-          </div>
+        <div className="flex justify-center items-center mb-8">
+          <h1 className="text-4xl md:text-5xl font-bold text-blue-800">这b暑假值不值</h1>
+          {/* 删除按钮部分 */}
         </div>
 
         {/* 倒计时卡片 */}
@@ -586,7 +581,7 @@ const Index = () => {
         {/* 暑假价值评估 */}
         <Card className="mb-8">
           <CardHeader>
-            <CardTitle className="text-2xl font-bold">你的暑假值不值?</CardTitle>
+            {/* <CardTitle className="text-2xl font-bold">这b暑假放的值不值?</CardTitle> */}
           </CardHeader>
           <CardContent>
             <div className="space-y-6">
