@@ -342,8 +342,8 @@ const Index = () => {
       return !['internship', 'travel', 'relationship', 'postgraduate', 'studyAbroad', 'job', 'lottery', 'learnedSkill', 'madeFriend'].includes(key);
     });
 
-    const firstTenAchievements = achievementsList.slice(0, 10);
-    const remainingAchievements = achievementsList.slice(10);
+    const firstTenAchievements = achievementsList.slice(0, 12);
+    const remainingAchievements = achievementsList.slice(12);
 
     return (
       <div className="space-y-4">
@@ -653,15 +653,6 @@ const Index = () => {
                 </h3>
                 {/* 大成就 */}
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-                  <label className="flex items-center gap-2 p-2 bg-white rounded-md shadow-sm">
-                    <input
-                      type="checkbox"
-                      checked={achievements.internship}
-                      onChange={() => toggleAchievement('internship')}
-                      className="h-4 w-4"
-                    />
-                    <span>找到了实习</span>
-                  </label>
                   <label className="flex items-center gap-2 p-2 bg-white rounded-md shadow-sm">
                     <input
                       type="checkbox"
