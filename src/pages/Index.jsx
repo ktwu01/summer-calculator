@@ -135,8 +135,8 @@ const Index = () => {
     if (achievements.studyAbroad) score += 10;
     if (achievements.job) score += 10;
     if (achievements.lottery) score += 10;
-    if (achievements.learnedSkill) score += 20;
-    if (achievements.madeFriend) score += 20;
+    if (achievements.learnedSkill) score += 10;
+    if (achievements.madeFriend) score += 10;
     
     // 小成就加分 (每个3分)
     if (achievements.gaming) score += 3;
