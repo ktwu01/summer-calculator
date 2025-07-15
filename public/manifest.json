@@ -1,0 +1,21 @@
+{
+  "name": "这b暑假放的值不值",
+  "short_name": "暑假计算器",
+  "description": "测测你的暑假过得值不值！包含作业完成度、暑假成就、日常活动等多维度评估。",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1d4ed8",
+  "icons": [
+    {
+      "src": "/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+} 

@@ -1,0 +1,9 @@
+# Allow all web crawlers
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://github.com/ktwu01/summer-calculator/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 10 

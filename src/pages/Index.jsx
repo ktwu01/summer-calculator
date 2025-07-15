@@ -717,7 +717,7 @@ const Index = () => {
                       onChange={() => toggleAchievement('job')}
                       className="h-4 w-4"
                     />
-                    <span>绕地球一坤圈</span>
+                    <span>绕地球一圈</span>
                   </label>
                   <label className="flex items-center gap-2 p-2 bg-white rounded-md shadow-sm">
                     <input
@@ -757,7 +757,7 @@ const Index = () => {
                 <div className="flex gap-2 mb-4">
                   <input
                     type="text"
-                    placeholder="添加你的暑假活动 (如: 旅行、绕地球一坤圈、中彩票、交到新朋友等)"
+                    placeholder="添加你的暑假活动 (如: 旅行、绕地球一圈、中彩票、交到新朋友等)"
                     value={newActivity}
                     onChange={(e) => setNewActivity(e.target.value)}
                     className="flex-1 px-3 py-2 border rounded-md shadow-sm"
@@ -820,7 +820,7 @@ const Index = () => {
           <CardContent>
             <div className="flex flex-wrap gap-2 justify-center">
               <Button className="bg-blue-500 hover:bg-blue-600 text-white">
-                你直接截图就可以分享到朋友圈啦
+                1.直接截图 2.点击【复制链接】⬇️ 就可以分享到朋友圈啦
               </Button>
               <FacebookShareButton url={shareUrl} quote={`我的暑假价值评分: ${summerValue} - ${scoreComment}`}>
                 <Button variant="outline">分享到 Facebook</Button>
@@ -856,17 +856,6 @@ const Index = () => {
               <Bookmark className="h-4 w-4" />
               收藏网站
             </Button>
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={() => {
-                alert('请使用浏览器的截图功能或按下 PrtSc 键进行截图分享');
-              }}
-              className="flex items-center gap-2"
-            >
-              <Camera className="h-4 w-4" />
-              截图分享
-            </Button>
           </div>
           
           {showCopyNotification && (
@@ -876,21 +865,19 @@ const Index = () => {
           )}
 
           <footer className="text-center text-gray-500 text-sm mt-8 pb-4">
-            <p>© 2024 暑假价值计算器</p>
-            <p className="mt-2">
+            <p>© 2025 这b暑假放的值不值？  
               <Link2 className="h-4 w-4 inline-block mr-1" />
               <a
-                href={window.location.href}
+                href="https://github.com/ktwu01/summer-calculator/"
                 className="text-blue-600 hover:text-blue-800"
                 onClick={(e) => {
                   e.preventDefault();
                   copyUrlToClipboard();
                 }}
               >
-                {window.location.href}
+                https://github.com/ktwu01/summer-calculator/
               </a>
             </p>
-            <p className="mt-2">欢迎分享给你的朋友！</p>
           </footer>
         </div>
       </div>
