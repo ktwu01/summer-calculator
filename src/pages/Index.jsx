@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
-import { Share2, Clock, BookOpen, Sun, Trophy, Award, Gamepad2, Trophy as TrophyIcon, Smartphone, Cloud, Utensils, Heart, Plane, GraduationCap, Briefcase, DollarSign, Music, Film, Dumbbell, Coffee, Moon, Wifi, ShoppingBag, Smile, Frown, Meh, ThumbsUp, ThumbsDown, Battery, Wrench, Bike, Car, Bus, Train, Ship, Anchor, Camera, Headphones, Book, PenTool, Mic, Phone, Mail, MessageSquare, User, Users, Home, Map, Navigation, Compass, Globe, Watch, Calendar, CreditCard, Key, Lock, Unlock, Gift, Bell, Star, Flag, Trash2, Download, Upload, Edit, Copy, Save, Plus, Minus, X, Check, ChevronRight, ChevronLeft, ChevronUp, ChevronDown, ArrowRight, ArrowLeft, ArrowUp, ArrowDown, RotateCw, RefreshCw, Power, Volume2, VolumeX, Sliders, Settings, HelpCircle, AlertCircle, Info, Lightbulb, Zap, Shield, Feather, Droplet, Wind, Thermometer, Umbrella, Leaf, Trees as Tree, Bug, Fish, Bird, Cat, Dog, PawPrint } from 'lucide-react'
+import { Share2, Clock, BookOpen, Sun, Trophy, Award, Gamepad2, Trophy as TrophyIcon, Smartphone, Cloud, Utensils, Heart, Plane, GraduationCap, Briefcase, DollarSign, Music, Film, Dumbbell, Coffee, Moon, Wifi, ShoppingBag, Smile, Frown, Meh, ThumbsUp, ThumbsDown, Battery, Wrench, Bike, Car, Bus, Train, Ship, Anchor, Camera, Headphones, Book, PenTool, Mic, Phone, Mail, MessageSquare, User, Users, Home, Map, Navigation, Compass, Globe, Watch, Calendar, CreditCard, Key, Lock, Unlock, Gift, Bell, Star, Flag, Trash2, Download, Upload, Edit, Copy, Save, Plus, Minus, X, Check, ChevronRight, ChevronLeft, ChevronUp, ChevronDown, ArrowRight, ArrowLeft, ArrowUp, ArrowDown, RotateCw, RefreshCw, Power, Volume2, VolumeX, Sliders, Settings, HelpCircle, AlertCircle, Info, Lightbulb, Zap, Shield, Feather, Droplet, Wind, Thermometer, Umbrella, Leaf, Trees as Tree, Bug, Fish, Bird, Cat, Dog, PawPrint, Wine, Image, Wallet, Package } from 'lucide-react'
 import Countdown from "react-countdown";
 import {
   FacebookShareButton,
@@ -20,6 +20,7 @@ const Index = () => {
   const [newActivity, setNewActivity] = useState("");
   const [shareUrl, setShareUrl] = useState("");
   const [achievements, setAchievements] = useState({
+    // 大成就保持不变
     internship: false,
     travel: false,
     relationship: false,
@@ -27,16 +28,16 @@ const Index = () => {
     studyAbroad: false,
     job: false,
     lottery: false,
-    // 替换自定义成就
     learnedSkill: false,
     madeFriend: false,
-    // 新增日常成就
+    
+    // 小成就 - 新增更多有趣的日常事件
     gaming: false,
-    competition: false,
     douyin: false,
     daydreaming: false,
     goodPoop: false,
     deliciousFood: false,
+    expelled: false, // 被退学
     sleptWell: false,
     watchedMovie: false,
     listenedMusic: false,
@@ -53,7 +54,6 @@ const Index = () => {
     chargedPhone: false,
     fixedSomething: false,
     rodeBike: false,
-    // 新增更多日常小事情
     gotFired: false,
     brokeUp: false,
     gotDrunk: false,
@@ -73,7 +73,124 @@ const Index = () => {
     deletedSocialMedia: false,
     reinstalledSocialMedia: false,
     arguedOnline: false,
-    wonArgument: false
+    wonArgument: false,
+    // 新增更多有趣的小事情
+    lostGame: false, // 游戏连跪
+    wonLottery: false, // 中了5块钱彩票
+    missedBus: false, // 错过末班车
+    brokePhone: false, // 手机摔碎
+    atePizza: false, // 吃披萨
+    watchedCat: false, // 看猫咪视频
+    playedMahjong: false, // 打麻将
+    sangKTV: false, // 唱K
+    dancedAlone: false, // 一个人跳舞
+    burntFood: false, // 把饭煮糊了
+    plantedFlower: false, // 种了一盆花
+    killedPlant: false, // 花养死了
+    learnedRecipe: false, // 学会新菜
+    forgotMask: false, // 出门忘带口罩
+    sawRainbow: false, // 看到彩虹
+    stepInPoop: false, // 踩到狗屎
+    sawCelebrity: false, // 偶遇明星
+    gotScammed: false, // 被骗钱
+    wonRedPacket: false, // 抢到大红包
+    missedDelivery: false, // 快递放丢了
+    foundOldThing: false, // 翻到老物件
+    triedNewFood: false, // 尝试新食物
+    gotAllergic: false, // 食物过敏
+    brokeGlasses: false, // 眼镜摔坏
+    lostKey: false, // 丢钥匙
+    stuckInElevator: false, // 电梯卡住
+    sawShooting: false, // 看到流星
+    madeIceCream: false, // 自制冰淇淋
+    burnedTongue: false, // 烫到舌头
+    ranInRain: false, // 雨中奔跑
+    sawFireworks: false, // 看到烟花
+    builtLego: false, // 拼乐高
+    drewPicture: false, // 画画
+    wrotePoem: false, // 写诗
+    playedInstrument: false, // 弹琴
+    tookNap: false, // 午睡
+    watchedSunrise: false, // 看日出
+    foldedPaper: false, // 折纸
+    playedWithPet: false, // 逗宠物
+    cleanedRoom: false, // 大扫除
+    organizedPhotos: false, // 整理照片
+    deletedExes: false, // 删前任照片
+    stalkedCrush: false, // 偷看暗恋对象
+    sentWrongMessage: false, // 发错群消息
+    recoverMessage: false, // 撤回消息
+    blockedEx: false, // 拉黑前任
+    unblockedEx: false, // 取消拉黑
+    changedHairstyle: false, // 换新发型
+    dyedHair: false, // 染头发
+    gotPiercing: false, // 打耳洞
+    gotTattoo: false, // 纹身
+    joinedGym: false, // 办健身卡
+    quitGym: false, // 健身卡闲置
+    startedDiet: false, // 开始减肥
+    brokeDict: false, // 破戒
+    learnedDance: false, // 学跳舞
+    forgotDance: false, // 忘记舞步
+    playedBasketball: false, // 打篮球
+    playedFrisbee: false, // 玩飞盘
+    wentSwimming: false, // 游泳
+    gotSunburned: false, // 晒伤
+    hadHotpot: false, // 吃火锅
+    hadBBQ: false, // 烧烤
+    orderedTakeout: false, // 点外卖
+    cookedMeal: false, // 自己做饭
+    watchedDrama: false, // 追剧
+    bingeDrama: false, // 熬夜追剧
+    playedSwitch: false, // 玩switch
+    boughtGame: false, // 买新游戏
+    completedGame: false, // 通关游戏
+    uninstalledGame: false, // 卸载游戏
+    installedGame: false, // 重装游戏
+    watchedAnime: false, // 看动漫
+    readManga: false, // 看漫画
+    readNovel: false, // 看小说
+    wroteStory: false, // 写小说
+    startedBlog: false, // 开始写博客
+    abandonedBlog: false, // 放弃写博客
+    learnedLanguage: false, // 学新语言
+    forgotLanguage: false, // 忘记语言
+    madePlaylist: false, // 做歌单
+    deletedPlaylist: false, // 删歌单
+    watchedTutorial: false, // 看教程
+    failedTutorial: false, // 教程没看懂
+    joinedClub: false, // 加入社团
+    quitClub: false, // 退出社团
+    startedHobby: false, // 开始新爱好
+    quitHobby: false, // 放弃爱好
+    gotLost: false, // 迷路
+    foundWayBack: false, // 找到路
+    brokePromise: false, // 失约
+    keptPromise: false, // 守约
+    lostBet: false, // 打赌输了
+    wonBet: false, // 打赌赢了
+    gotPranked: false, // 被整蛊
+    prankedOthers: false, // 整蛊他人
+    toldJoke: false, // 讲笑话
+    laughedAtJoke: false, // 笑话被笑
+    startedDiary: false, // 开始写日记
+    quitDiary: false, // 放弃写日记
+    triedMeditation: false, // 尝试冥想
+    fellAsleep: false, // 冥想睡着
+    joinedParty: false, // 参加派对
+    leftEarly: false, // 提前离场
+    gotCompliment: false, // 被夸奖
+    gaveCompliment: false, // 夸奖他人
+    helpedStranger: false, // 帮助陌生人
+    gotHelped: false, // 被帮助
+    madeWish: false, // 许愿
+    wishCameTrue: false, // 愿望成真
+    brokeRule: false, // 违反规定
+    gotCaught: false, // 被抓到
+    escapedTrouble: false, // 逃过一劫
+    causedTrouble: false, // 惹祸
+    savedMoney: false, // 存钱
+    spentAll: false, // 花光存款
   });
 
   useEffect(() => {
@@ -128,66 +245,27 @@ const Index = () => {
     }
     
     // 大成就加分 (每个10分)
-    if (achievements.internship) score += 10;
-    if (achievements.travel) score += 10;
-    if (achievements.relationship) score += 10;
-    if (achievements.postgraduate) score += 10;
-    if (achievements.studyAbroad) score += 10;
-    if (achievements.job) score += 10;
-    if (achievements.lottery) score += 10;
-    if (achievements.learnedSkill) score += 10;
-    if (achievements.madeFriend) score += 10;
+    const bigAchievements = [
+      'internship', 'travel', 'relationship', 'postgraduate',
+      'studyAbroad', 'job', 'lottery', 'learnedSkill', 'madeFriend'
+    ];
     
-    // 小成就加分 (每个3分)
-    if (achievements.gaming) score += 3;
-    if (achievements.competition) score += 3;
-    if (achievements.douyin) score += 3;
-    if (achievements.daydreaming) score += 3;
-    if (achievements.goodPoop) score += 3;
-    if (achievements.deliciousFood) score += 3;
-    if (achievements.sleptWell) score += 3;
-    if (achievements.watchedMovie) score += 3;
-    if (achievements.listenedMusic) score += 3;
-    if (achievements.workedOut) score += 3;
-    if (achievements.drankCoffee) score += 3;
-    if (achievements.stayedUpLate) score += 3;
-    if (achievements.connectedWifi) score += 3;
-    if (achievements.wentShopping) score += 3;
-    if (achievements.feltHappy) score += 3;
-    if (achievements.feltSad) score += 3;
-    if (achievements.feltMeh) score += 3;
-    if (achievements.likedSomething) score += 3;
-    if (achievements.dislikedSomething) score += 3;
-    if (achievements.chargedPhone) score += 3;
-    if (achievements.fixedSomething) score += 3;
-    if (achievements.rodeBike) score += 3;
-    // 新增小成就加分
-    if (achievements.gotFired) score += 3;
-    if (achievements.brokeUp) score += 3;
-    if (achievements.gotDrunk) score += 3;
-    if (achievements.madeMeme) score += 3;
-    if (achievements.lostWallet) score += 3;
-    if (achievements.foundMoney) score += 3;
-    if (achievements.gotHaircut) score += 3;
-    if (achievements.boughtClothes) score += 3;
-    if (achievements.ateSpicy) score += 3;
-    if (achievements.criedAlone) score += 3;
-    if (achievements.laughedAloud) score += 3;
-    if (achievements.watchedSunset) score += 3;
-    if (achievements.sleptPastNoon) score += 3;
-    if (achievements.forgotPassword) score += 3;
-    if (achievements.metStranger) score += 3;
-    if (achievements.tookSelfie) score += 3;
-    if (achievements.deletedSocialMedia) score += 3;
-    if (achievements.reinstalledSocialMedia) score += 3;
-    if (achievements.arguedOnline) score += 3;
-    if (achievements.wonArgument) score += 3;
+    bigAchievements.forEach(achievement => {
+      if (achievements[achievement]) score += 10;
+    });
+    
+    // 所有其他成就都算作小成就 (每个3分)
+    Object.keys(achievements).forEach(key => {
+      if (!bigAchievements.includes(key) && achievements[key]) {
+        score += 3;
+      }
+    });
     
     // 活动加分 (每个活动加10分)
     score += activities.length * 10;
     
     return Math.round(score);
-  };
+};
 
   const countdownRenderer = ({ days, hours, minutes, seconds, completed }) => {
     if (completed) {
@@ -314,8 +392,8 @@ const Index = () => {
                   <Trophy className="h-5 w-5" />
                   <span>暑假成就</span>
                 </h3>
+                {/* 大成就 */}
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-                  {/* 大成就 */}
                   <label className="flex items-center gap-2 p-2 bg-white rounded-md shadow-sm">
                     <input
                       type="checkbox"
@@ -397,420 +475,88 @@ const Index = () => {
                     />
                     <span>交到新朋友</span>
                   </label>
-                  
-                  {/* 新增小成就 */}
-                  <label className="flex items-center gap-2 p-2 bg-white rounded-md shadow-sm">
-                    <input
-                      type="checkbox"
-                      checked={achievements.gaming}
-                      onChange={() => toggleAchievement('gaming')}
-                      className="h-4 w-4"
-                    />
-                    <Gamepad2 className="h-4 w-4" />
-                    <span>打游戏</span>
-                  </label>
-                  <label className="flex items-center gap-2 p-2 bg-white rounded-md shadow-sm">
-                    <input
-                      type="checkbox"
-                      checked={achievements.competition}
-                      onChange={() => toggleAchievement('competition')}
-                      className="h-4 w-4"
-                    />
-                    <TrophyIcon className="h-4 w-4" />
-                    <span>打比赛</span>
-                  </label>
-                  <label className="flex items-center gap-2 p-2 bg-white rounded-md shadow-sm">
-                    <input
-                      type="checkbox"
-                      checked={achievements.douyin}
-                      onChange={() => toggleAchievement('douyin')}
-                      className="h-4 w-4"
-                    />
-                    <Smartphone className="h-4 w-4" />
-                    <span>刷抖音</span>
-                  </label>
-                  <label className="flex items-center gap-2 p-2 bg-white rounded-md shadow-sm">
-                    <input
-                      type="checkbox"
-                      checked={achievements.daydreaming}
-                      onChange={() => toggleAchievement('daydreaming')}
-                      className="h-4 w-4"
-                    />
-                    <Cloud className="h-4 w-4" />
-                    <span>发呆</span>
-                  </label>
-                  <label className="flex items-center gap-2 p-2 bg-white rounded-md shadow-sm">
-                    <input
-                      type="checkbox"
-                      checked={achievements.goodPoop}
-                      onChange={() => toggleAchievement('goodPoop')}
-                      className="h-4 w-4"
-                    />
-                    <span>💩通畅</span>
-                  </label>
-                  <label className="flex items-center gap-2 p-2 bg-white rounded-md shadow-sm">
-                    <input
-                      type="checkbox"
-                      checked={achievements.deliciousFood}
-                      onChange={() => toggleAchievement('deliciousFood')}
-                      className="h-4 w-4"
-                    />
-                    <Utensils className="h-4 w-4" />
-                    <span>吃了好吃的</span>
-                  </label>
-                  <label className="flex items-center gap-2 p-2 bg-white rounded-md shadow-sm">
-                    <input
-                      type="checkbox"
-                      checked={achievements.sleptWell}
-                      onChange={() => toggleAchievement('sleptWell')}
-                      className="h-4 w-4"
-                    />
-                    <Moon className="h-4 w-4" />
-                    <span>睡得好</span>
-                  </label>
-                  <label className="flex items-center gap-2 p-2 bg-white rounded-md shadow-sm">
-                    <input
-                      type="checkbox"
-                      checked={achievements.watchedMovie}
-                      onChange={() => toggleAchievement('watchedMovie')}
-                      className="h-4 w-4"
-                    />
-                    <Film className="h-4 w-4" />
-                    <span>看电影</span>
-                  </label>
-                  <label className="flex items-center gap-2 p-2 bg-white rounded-md shadow-sm">
-                    <input
-                      type="checkbox"
-                      checked={achievements.listenedMusic}
-                      onChange={() => toggleAchievement('listenedMusic')}
-                      className="h-4 w-4"
-                    />
-                    <Headphones className="h-4 w-4" />
-                    <span>听音乐</span>
-                  </label>
-                  <label className="flex items-center gap-2 p-2 bg-white rounded-md shadow-sm">
-                    <input
-                      type="checkbox"
-                      checked={achievements.workedOut}
-                      onChange={() => toggleAchievement('workedOut')}
-                      className="h-4 w-4"
-                    />
-                    <Dumbbell className="h-4 w-4" />
-                    <span>健身</span>
-                  </label>
-                  <label className="flex items-center gap-2 p-2 bg-white rounded-md shadow-sm">
-                    <input
-                      type="checkbox"
-                      checked={achievements.drankCoffee}
-                      onChange={() => toggleAchievement('drankCoffee')}
-                      className="h-4 w-4"
-                    />
-                    <Coffee className="h-4 w-4" />
-                    <span>喝咖啡</span>
-                  </label>
-                  <label className="flex items-center gap-2 p-2 bg-white rounded-md shadow-sm">
-                    <input
-                      type="checkbox"
-                      checked={achievements.stayedUpLate}
-                      onChange={() => toggleAchievement('stayedUpLate')}
-                      className="h-4 w-4"
-                    />
-                    <Moon className="h-4 w-4" />
-                    <span>熬夜</span>
-                  </label>
-                  <label className="flex items-center gap-2 p-2 bg-white rounded-md shadow-sm">
-                    <input
-                      type="checkbox"
-                      checked={achievements.connectedWifi}
-                      onChange={() => toggleAchievement('connectedWifi')}
-                      className="h-4 w-4"
-                    />
-                    <Wifi className="h-4 w-4" />
-                    <span>连上WiFi</span>
-                  </label>
-                  <label className="flex items-center gap-2 p-2 bg-white rounded-md shadow-sm">
-                    <input
-                      type="checkbox"
-                      checked={achievements.wentShopping}
-                      onChange={() => toggleAchievement('wentShopping')}
-                      className="h-4 w-4"
-                    />
-                    <ShoppingBag className="h-4 w-4" />
-                    <span>购物</span>
-                  </label>
-                  <label className="flex items-center gap-2 p-2 bg-white rounded-md shadow-sm">
-                    <input
-                      type="checkbox"
-                      checked={achievements.feltHappy}
-                      onChange={() => toggleAchievement('feltHappy')}
-                      className="h-4 w-4"
-                    />
-                    <Smile className="h-4 w-4" />
-                    <span>感到开心</span>
-                  </label>
-                  <label className="flex items-center gap-2 p-2 bg-white rounded-md shadow-sm">
-                    <input
-                      type="checkbox"
-                      checked={achievements.feltSad}
-                      onChange={() => toggleAchievement('feltSad')}
-                      className="h-4 w-4"
-                    />
-                    <Frown className="h-4 w-4" />
-                    <span>感到难过</span>
-                  </label>
-                  <label className="flex items-center gap-2 p-2 bg-white rounded-md shadow-sm">
-                    <input
-                      type="checkbox"
-                      checked={achievements.feltMeh}
-                      onChange={() => toggleAchievement('feltMeh')}
-                      className="h-4 w-4"
-                    />
-                    <Meh className="h-4 w-4" />
-                    <span>感到无聊</span>
-                  </label>
-                  <label className="flex items-center gap-2 p-2 bg-white rounded-md shadow-sm">
-                    <input
-                      type="checkbox"
-                      checked={achievements.likedSomething}
-                      onChange={() => toggleAchievement('likedSomething')}
-                      className="h-4 w-4"
-                    />
-                    <ThumbsUp className="h-4 w-4" />
-                    <span>点赞</span>
-                  </label>
-                  <label className="flex items-center gap-2 p-2 bg-white rounded-md shadow-sm">
-                    <input
-                      type="checkbox"
-                      checked={achievements.dislikedSomething}
-                      onChange={() => toggleAchievement('dislikedSomething')}
-                      className="h-4 w-4"
-                    />
-                    <ThumbsDown className="h-4 w-4" />
-                    <span>点踩</span>
-                  </label>
-                  <label className="flex items-center gap-2 p-2 bg-white rounded-md shadow-sm">
-                    <input
-                      type="checkbox"
-                      checked={achievements.chargedPhone}
-                      onChange={() => toggleAchievement('chargedPhone')}
-                      className="h-4 w-4"
-                    />
-                    <Battery className="h-4 w-4" />
-                    <span>充电</span>
-                  </label>
-                  <label className="flex items-center gap-2 p-2 bg-white rounded-md shadow-sm">
-                    <input
-                      type="checkbox"
-                      checked={achievements.fixedSomething}
-                      onChange={() => toggleAchievement('fixedSomething')}
-                      className="h-4 w-4"
-                    />
-                    <Wrench className="h-4 w-4" />
-                    <span>修东西</span>
-                  </label>
-                  <label className="flex items-center gap-2 p-2 bg-white rounded-md shadow-sm">
-                    <input
-                      type="checkbox"
-                      checked={achievements.rodeBike}
-                      onChange={() => toggleAchievement('rodeBike')}
-                      className="h-4 w-4"
-                    />
-                    <Bike className="h-4 w-4" />
-                    <span>骑自行车</span>
-                  </label>
-                  {/* 新增更多日常小事情 */}
-                  <label className="flex items-center gap-2 p-2 bg-white rounded-md shadow-sm">
-                    <input
-                      type="checkbox"
-                      checked={achievements.gotFired}
-                      onChange={() => toggleAchievement('gotFired')}
-                      className="h-4 w-4"
-                    />
-                    <Briefcase className="h-4 w-4" />
-                    <span>被炒鱿鱼</span>
-                  </label>
-                  <label className="flex items-center gap-2 p-2 bg-white rounded-md shadow-sm">
-                    <input
-                      type="checkbox"
-                      checked={achievements.brokeUp}
-                      onChange={() => toggleAchievement('brokeUp')}
-                      className="h-4 w-4"
-                    />
-                    <Heart className="h-4 w-4" />
-                    <span>分手了</span>
-                  </label>
-                  <label className="flex items-center gap-2 p-2 bg-white rounded-md shadow-sm">
-                    <input
-                      type="checkbox"
-                      checked={achievements.gotDrunk}
-                      onChange={() => toggleAchievement('gotDrunk')}
-                      className="h-4 w-4"
-                    />
-                    <span>喝醉了</span>
-                  </label>
-                  <label className="flex items-center gap-2 p-2 bg-white rounded-md shadow-sm">
-                    <input
-                      type="checkbox"
-                      checked={achievements.madeMeme}
-                      onChange={() => toggleAchievement('madeMeme')}
-                      className="h-4 w-4"
-                    />
-                    <span>制作表情包</span>
-                  </label>
-                  <label className="flex items-center gap-2 p-2 bg-white rounded-md shadow-sm">
-                    <input
-                      type="checkbox"
-                      checked={achievements.lostWallet}
-                      onChange={() => toggleAchievement('lostWallet')}
-                      className="h-4 w-4"
-                    />
-                    <span>丢钱包</span>
-                  </label>
-                  <label className="flex items-center gap-2 p-2 bg-white rounded-md shadow-sm">
-                    <input
-                      type="checkbox"
-                      checked={achievements.foundMoney}
-                      onChange={() => toggleAchievement('foundMoney')}
-                      className="h-4 w-4"
-                    />
-                    <DollarSign className="h-4 w-4" />
-                    <span>捡到钱</span>
-                  </label>
-                  <label className="flex items-center gap-2 p-2 bg-white rounded-md shadow-sm">
-                    <input
-                      type="checkbox"
-                      checked={achievements.gotHaircut}
-                      onChange={() => toggleAchievement('gotHaircut')}
-                      className="h-4 w-4"
-                    />
-                    <span>剪头发</span>
-                  </label>
-                  <label className="flex items-center gap-2 p-2 bg-white rounded-md shadow-sm">
-                    <input
-                      type="checkbox"
-                      checked={achievements.boughtClothes}
-                      onChange={() => toggleAchievement('boughtClothes')}
-                      className="h-4 w-4"
-                    />
-                    <ShoppingBag className="h-4 w-4" />
-                    <span>买新衣服</span>
-                  </label>
-                  <label className="flex items-center gap-2 p-2 bg-white rounded-md shadow-sm">
-                    <input
-                      type="checkbox"
-                      checked={achievements.ateSpicy}
-                      onChange={() => toggleAchievement('ateSpicy')}
-                      className="h-4 w-4"
-                    />
-                    <span>吃辣</span>
-                  </label>
-                  <label className="flex items-center gap-2 p-2 bg-white rounded-md shadow-sm">
-                    <input
-                      type="checkbox"
-                      checked={achievements.criedAlone}
-                      onChange={() => toggleAchievement('criedAlone')}
-                      className="h-4 w-4"
-                    />
-                    <Frown className="h-4 w-4" />
-                    <span>独自哭泣</span>
-                  </label>
-                  <label className="flex items-center gap-2 p-2 bg-white rounded-md shadow-sm">
-                    <input
-                      type="checkbox"
-                      checked={achievements.laughedAloud}
-                      onChange={() => toggleAchievement('laughedAloud')}
-                      className="h-4 w-4"
-                    />
-                    <Smile className="h-4 w-4" />
-                    <span>放声大笑</span>
-                  </label>
-                  <label className="flex items-center gap-2 p-2 bg-white rounded-md shadow-sm">
-                    <input
-                      type="checkbox"
-                      checked={achievements.watchedSunset}
-                      onChange={() => toggleAchievement('watchedSunset')}
-                      className="h-4 w-4"
-                    />
-                    <Sun className="h-4 w-4" />
-                    <span>看日落</span>
-                  </label>
-                  <label className="flex items-center gap-2 p-2 bg-white rounded-md shadow-sm">
-                    <input
-                      type="checkbox"
-                      checked={achievements.sleptPastNoon}
-                      onChange={() => toggleAchievement('sleptPastNoon')}
-                      className="h-4 w-4"
-                    />
-                    <Moon className="h-4 w-4" />
-                    <span>睡到下午</span>
-                  </label>
-                  <label className="flex items-center gap-2 p-2 bg-white rounded-md shadow-sm">
-                    <input
-                      type="checkbox"
-                      checked={achievements.forgotPassword}
-                      onChange={() => toggleAchievement('forgotPassword')}
-                      className="h-4 w-4"
-                    />
-                    <Key className="h-4 w-4" />
-                    <span>忘记密码</span>
-                  </label>
-                  <label className="flex items-center gap-2 p-2 bg-white rounded-md shadow-sm">
-                    <input
-                      type="checkbox"
-                      checked={achievements.metStranger}
-                      onChange={() => toggleAchievement('metStranger')}
-                      className="h-4 w-4"
-                    />
-                    <User className="h-4 w-4" />
-                    <span>遇见陌生人</span>
-                  </label>
-                  <label className="flex items-center gap-2 p-2 bg-white rounded-md shadow-sm">
-                    <input
-                      type="checkbox"
-                      checked={achievements.tookSelfie}
-                      onChange={() => toggleAchievement('tookSelfie')}
-                      className="h-4 w-4"
-                    />
-                    <Camera className="h-4 w-4" />
-                    <span>自拍</span>
-                  </label>
-                  <label className="flex items-center gap-2 p-2 bg-white rounded-md shadow-sm">
-                    <input
-                      type="checkbox"
-                      checked={achievements.deletedSocialMedia}
-                      onChange={() => toggleAchievement('deletedSocialMedia')}
-                      className="h-4 w-4"
-                    />
-                    <span>卸载社交软件</span>
-                  </label>
-                  <label className="flex items-center gap-2 p-2 bg-white rounded-md shadow-sm">
-                    <input
-                      type="checkbox"
-                      checked={achievements.reinstalledSocialMedia}
-                      onChange={() => toggleAchievement('reinstalledSocialMedia')}
-                      className="h-4 w-4"
-                    />
-                    <span>重装社交软件</span>
-                  </label>
-                  <label className="flex items-center gap-2 p-2 bg-white rounded-md shadow-sm">
-                    <input
-                      type="checkbox"
-                      checked={achievements.arguedOnline}
-                      onChange={() => toggleAchievement('arguedOnline')}
-                      className="h-4 w-4"
-                    />
-                    <span>网上吵架</span>
-                  </label>
-                  <label className="flex items-center gap-2 p-2 bg-white rounded-md shadow-sm">
-                    <input
-                      type="checkbox"
-                      checked={achievements.wonArgument}
-                      onChange={() => toggleAchievement('wonArgument')}
-                      className="h-4 w-4"
-                    />
-                    <ThumbsUp className="h-4 w-4" />
-                    <span>吵赢了</span>
-                  </label>
+                </div>
+                {/* 小成就列表 */}
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mt-4">
+                  {Object.entries(achievements).map(([key, value]) => {
+                    // 跳过大成就
+                    if (['internship', 'travel', 'relationship', 'postgraduate', 'studyAbroad', 'job', 'lottery', 'learnedSkill', 'madeFriend'].includes(key)) {
+                      return null;
+                    }
+                    
+                    // 获取显示名称和图标
+                    const getAchievementDisplay = (key) => {
+                      const displays = {
+                        gaming: { name: "打游戏", icon: Gamepad2 },
+                        douyin: { name: "刷抖音", icon: Smartphone },
+                        daydreaming: { name: "发呆", icon: Cloud },
+                        goodPoop: { name: "拉屎通畅", icon: ThumbsUp },
+                        deliciousFood: { name: "吃好吃的", icon: Utensils },
+                        expelled: { name: "被退学", icon: GraduationCap },
+                        sleptWell: { name: "睡得好", icon: Moon },
+                        watchedMovie: { name: "看电影", icon: Film },
+                        listenedMusic: { name: "听音乐", icon: Music },
+                        workedOut: { name: "健身", icon: Dumbbell },
+                        drankCoffee: { name: "喝咖啡", icon: Coffee },
+                        stayedUpLate: { name: "熬夜", icon: Moon },
+                        connectedWifi: { name: "连上WiFi", icon: Wifi },
+                        wentShopping: { name: "购物", icon: ShoppingBag },
+                        feltHappy: { name: "感到开心", icon: Smile },
+                        feltSad: { name: "感到难过", icon: Frown },
+                        feltMeh: { name: "感到无聊", icon: Meh },
+                        likedSomething: { name: "点赞", icon: ThumbsUp },
+                        dislikedSomething: { name: "点踩", icon: ThumbsDown },
+                        chargedPhone: { name: "充电", icon: Battery },
+                        fixedSomething: { name: "修东西", icon: Wrench },
+                        rodeBike: { name: "骑自行车", icon: Bike },
+                        gotFired: { name: "被炒鱿鱼", icon: Briefcase },
+                        brokeUp: { name: "分手", icon: Heart },
+                        gotDrunk: { name: "喝醉", icon: Wine },
+                        madeMeme: { name: "制作表情包", icon: Image },
+                        lostWallet: { name: "丢钱包", icon: Wallet },
+                        foundMoney: { name: "捡到钱", icon: DollarSign },
+                        // ... 为新增的成就添加显示名称和图标
+                        lostGame: { name: "游戏连跪", icon: Gamepad2 },
+                        wonLottery: { name: "中了5块钱", icon: DollarSign },
+                        missedBus: { name: "错过末班车", icon: Bus },
+                        brokePhone: { name: "手机摔碎", icon: Smartphone },
+                        atePizza: { name: "吃披萨", icon: Utensils },
+                        watchedCat: { name: "看猫咪视频", icon: Cat },
+                        playedMahjong: { name: "打麻将", icon: Gamepad2 },
+                        sangKTV: { name: "唱K", icon: Mic },
+                        dancedAlone: { name: "一个人跳舞", icon: Music },
+                        burntFood: { name: "把饭煮糊了", icon: Utensils },
+                        plantedFlower: { name: "种了一盆花", icon: Leaf },
+                        killedPlant: { name: "花养死了", icon: Leaf },
+                        learnedRecipe: { name: "学会新菜", icon: Utensils },
+                        forgotMask: { name: "忘带口罩", icon: Shield },
+                        sawRainbow: { name: "看到彩虹", icon: Sun },
+                        stepInPoop: { name: "踩到狗屎", icon: PawPrint },
+                        sawCelebrity: { name: "偶遇明星", icon: Star },
+                        gotScammed: { name: "被骗钱", icon: AlertCircle },
+                        wonRedPacket: { name: "抢到大红包", icon: Gift },
+                        missedDelivery: { name: "快递放丢了", icon: Package },
+                        // ... 继续添加其他成就的显示配置
+                      };
+                      return displays[key] || { name: key, icon: Check };
+                    };
+
+                    const display = getAchievementDisplay(key);
+                    const Icon = display.icon;
+
+                    return (
+                      <label key={key} className="flex items-center gap-2 p-2 bg-white rounded-md shadow-sm hover:bg-gray-50 transition-colors">
+                        <input
+                          type="checkbox"
+                          checked={value}
+                          onChange={() => toggleAchievement(key)}
+                          className="h-4 w-4"
+                        />
+                        {Icon && <Icon className="h-4 w-4" />}
+                        <span className="text-sm">{display.name}</span>
+                      </label>
+                    );
+                  })}
                 </div>
               </div>
 
