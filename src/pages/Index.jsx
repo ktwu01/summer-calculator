@@ -346,7 +346,7 @@ const Index = () => {
     const remainingAchievements = achievementsList.slice(12);
 
     return (
-      <div className="space-y-4">
+      <div className="space-y-3">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
           {firstTenAchievements.map(([key, value]) => renderAchievementItem(key, value))}
         </div>
@@ -358,7 +358,7 @@ const Index = () => {
             </Button>
           </CollapsibleTrigger>
           <CollapsibleContent>
-            <ScrollArea className="h-[400px] w-full rounded-md border p-4">
+            <ScrollArea className="h-[400px] w-full rounded-md border p-4 mt-3">
               <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                 {remainingAchievements.map(([key, value]) => renderAchievementItem(key, value))}
               </div>
@@ -556,7 +556,7 @@ const Index = () => {
       <div className="max-w-4xl mx-auto">
         {/* 导航栏 */}
         <div className="flex justify-center items-center mb-8">
-          <h1 className="text-4xl md:text-5xl font-bold text-blue-800">这b暑假值不值</h1>
+          <h1 className="text-4xl md:text-5xl font-bold text-blue-800">这b暑假放的值不值</h1>
           {/* 删除按钮部分 */}
         </div>
 
@@ -652,7 +652,7 @@ const Index = () => {
                   <span>暑假成就</span>
                 </h3>
                 {/* 大成就 */}
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-3">
                   <label className="flex items-center gap-2 p-2 bg-white rounded-md shadow-sm">
                     <input
                       type="checkbox"
@@ -678,7 +678,7 @@ const Index = () => {
                       onChange={() => toggleAchievement('postgraduate')}
                       className="h-4 w-4"
                     />
-                    <span>保研了</span>
+                    <span>躺平了</span>
                   </label>
                   <label className="flex items-center gap-2 p-2 bg-white rounded-md shadow-sm">
                     <input
@@ -687,7 +687,7 @@ const Index = () => {
                       onChange={() => toggleAchievement('studyAbroad')}
                       className="h-4 w-4"
                     />
-                    <span>出国留学</span>
+                    <span>我摊牌了</span>
                   </label>
                   <label className="flex items-center gap-2 p-2 bg-white rounded-md shadow-sm">
                     <input
@@ -696,7 +696,7 @@ const Index = () => {
                       onChange={() => toggleAchievement('job')}
                       className="h-4 w-4"
                     />
-                    <span>找到工作了</span>
+                    <span>绕地球一坤圈</span>
                   </label>
                   <label className="flex items-center gap-2 p-2 bg-white rounded-md shadow-sm">
                     <input
@@ -794,7 +794,7 @@ const Index = () => {
               <Share2 className="h-6 w-6" />
               <span>分享给你的朋友</span>
             </CardTitle>
-            <p className="text-sm text-gray-500">让你的朋友一起破防</p>
+            <p className="text-sm text-gray-500">是真朋友，就该一起高兴，一起破防</p>
           </CardHeader>
           <CardContent>
             <div className="flex flex-wrap gap-2 justify-center">
