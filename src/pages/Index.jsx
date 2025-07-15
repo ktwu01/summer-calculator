@@ -52,7 +52,28 @@ const Index = () => {
     dislikedSomething: false,
     chargedPhone: false,
     fixedSomething: false,
-    rodeBike: false
+    rodeBike: false,
+    // 新增更多日常小事情
+    gotFired: false,
+    brokeUp: false,
+    gotDrunk: false,
+    madeMeme: false,
+    lostWallet: false,
+    foundMoney: false,
+    gotHaircut: false,
+    boughtClothes: false,
+    ateSpicy: false,
+    criedAlone: false,
+    laughedAloud: false,
+    watchedSunset: false,
+    sleptPastNoon: false,
+    forgotPassword: false,
+    metStranger: false,
+    tookSelfie: false,
+    deletedSocialMedia: false,
+    reinstalledSocialMedia: false,
+    arguedOnline: false,
+    wonArgument: false
   });
 
   useEffect(() => {
@@ -140,6 +161,27 @@ const Index = () => {
     if (achievements.chargedPhone) score += 3;
     if (achievements.fixedSomething) score += 3;
     if (achievements.rodeBike) score += 3;
+    // 新增小成就加分
+    if (achievements.gotFired) score += 3;
+    if (achievements.brokeUp) score += 3;
+    if (achievements.gotDrunk) score += 3;
+    if (achievements.madeMeme) score += 3;
+    if (achievements.lostWallet) score += 3;
+    if (achievements.foundMoney) score += 3;
+    if (achievements.gotHaircut) score += 3;
+    if (achievements.boughtClothes) score += 3;
+    if (achievements.ateSpicy) score += 3;
+    if (achievements.criedAlone) score += 3;
+    if (achievements.laughedAloud) score += 3;
+    if (achievements.watchedSunset) score += 3;
+    if (achievements.sleptPastNoon) score += 3;
+    if (achievements.forgotPassword) score += 3;
+    if (achievements.metStranger) score += 3;
+    if (achievements.tookSelfie) score += 3;
+    if (achievements.deletedSocialMedia) score += 3;
+    if (achievements.reinstalledSocialMedia) score += 3;
+    if (achievements.arguedOnline) score += 3;
+    if (achievements.wonArgument) score += 3;
     
     // 活动加分 (每个活动加10分)
     score += activities.length * 10;
@@ -575,6 +617,199 @@ const Index = () => {
                     />
                     <Bike className="h-4 w-4" />
                     <span>骑自行车</span>
+                  </label>
+                  {/* 新增更多日常小事情 */}
+                  <label className="flex items-center gap-2 p-2 bg-white rounded-md shadow-sm">
+                    <input
+                      type="checkbox"
+                      checked={achievements.gotFired}
+                      onChange={() => toggleAchievement('gotFired')}
+                      className="h-4 w-4"
+                    />
+                    <Briefcase className="h-4 w-4" />
+                    <span>被炒鱿鱼</span>
+                  </label>
+                  <label className="flex items-center gap-2 p-2 bg-white rounded-md shadow-sm">
+                    <input
+                      type="checkbox"
+                      checked={achievements.brokeUp}
+                      onChange={() => toggleAchievement('brokeUp')}
+                      className="h-4 w-4"
+                    />
+                    <Heart className="h-4 w-4" />
+                    <span>分手了</span>
+                  </label>
+                  <label className="flex items-center gap-2 p-2 bg-white rounded-md shadow-sm">
+                    <input
+                      type="checkbox"
+                      checked={achievements.gotDrunk}
+                      onChange={() => toggleAchievement('gotDrunk')}
+                      className="h-4 w-4"
+                    />
+                    <span>喝醉了</span>
+                  </label>
+                  <label className="flex items-center gap-2 p-2 bg-white rounded-md shadow-sm">
+                    <input
+                      type="checkbox"
+                      checked={achievements.madeMeme}
+                      onChange={() => toggleAchievement('madeMeme')}
+                      className="h-4 w-4"
+                    />
+                    <span>制作表情包</span>
+                  </label>
+                  <label className="flex items-center gap-2 p-2 bg-white rounded-md shadow-sm">
+                    <input
+                      type="checkbox"
+                      checked={achievements.lostWallet}
+                      onChange={() => toggleAchievement('lostWallet')}
+                      className="h-4 w-4"
+                    />
+                    <span>丢钱包</span>
+                  </label>
+                  <label className="flex items-center gap-2 p-2 bg-white rounded-md shadow-sm">
+                    <input
+                      type="checkbox"
+                      checked={achievements.foundMoney}
+                      onChange={() => toggleAchievement('foundMoney')}
+                      className="h-4 w-4"
+                    />
+                    <DollarSign className="h-4 w-4" />
+                    <span>捡到钱</span>
+                  </label>
+                  <label className="flex items-center gap-2 p-2 bg-white rounded-md shadow-sm">
+                    <input
+                      type="checkbox"
+                      checked={achievements.gotHaircut}
+                      onChange={() => toggleAchievement('gotHaircut')}
+                      className="h-4 w-4"
+                    />
+                    <span>剪头发</span>
+                  </label>
+                  <label className="flex items-center gap-2 p-2 bg-white rounded-md shadow-sm">
+                    <input
+                      type="checkbox"
+                      checked={achievements.boughtClothes}
+                      onChange={() => toggleAchievement('boughtClothes')}
+                      className="h-4 w-4"
+                    />
+                    <ShoppingBag className="h-4 w-4" />
+                    <span>买新衣服</span>
+                  </label>
+                  <label className="flex items-center gap-2 p-2 bg-white rounded-md shadow-sm">
+                    <input
+                      type="checkbox"
+                      checked={achievements.ateSpicy}
+                      onChange={() => toggleAchievement('ateSpicy')}
+                      className="h-4 w-4"
+                    />
+                    <span>吃辣</span>
+                  </label>
+                  <label className="flex items-center gap-2 p-2 bg-white rounded-md shadow-sm">
+                    <input
+                      type="checkbox"
+                      checked={achievements.criedAlone}
+                      onChange={() => toggleAchievement('criedAlone')}
+                      className="h-4 w-4"
+                    />
+                    <Frown className="h-4 w-4" />
+                    <span>独自哭泣</span>
+                  </label>
+                  <label className="flex items-center gap-2 p-2 bg-white rounded-md shadow-sm">
+                    <input
+                      type="checkbox"
+                      checked={achievements.laughedAloud}
+                      onChange={() => toggleAchievement('laughedAloud')}
+                      className="h-4 w-4"
+                    />
+                    <Smile className="h-4 w-4" />
+                    <span>放声大笑</span>
+                  </label>
+                  <label className="flex items-center gap-2 p-2 bg-white rounded-md shadow-sm">
+                    <input
+                      type="checkbox"
+                      checked={achievements.watchedSunset}
+                      onChange={() => toggleAchievement('watchedSunset')}
+                      className="h-4 w-4"
+                    />
+                    <Sun className="h-4 w-4" />
+                    <span>看日落</span>
+                  </label>
+                  <label className="flex items-center gap-2 p-2 bg-white rounded-md shadow-sm">
+                    <input
+                      type="checkbox"
+                      checked={achievements.sleptPastNoon}
+                      onChange={() => toggleAchievement('sleptPastNoon')}
+                      className="h-4 w-4"
+                    />
+                    <Moon className="h-4 w-4" />
+                    <span>睡到下午</span>
+                  </label>
+                  <label className="flex items-center gap-2 p-2 bg-white rounded-md shadow-sm">
+                    <input
+                      type="checkbox"
+                      checked={achievements.forgotPassword}
+                      onChange={() => toggleAchievement('forgotPassword')}
+                      className="h-4 w-4"
+                    />
+                    <Key className="h-4 w-4" />
+                    <span>忘记密码</span>
+                  </label>
+                  <label className="flex items-center gap-2 p-2 bg-white rounded-md shadow-sm">
+                    <input
+                      type="checkbox"
+                      checked={achievements.metStranger}
+                      onChange={() => toggleAchievement('metStranger')}
+                      className="h-4 w-4"
+                    />
+                    <User className="h-4 w-4" />
+                    <span>遇见陌生人</span>
+                  </label>
+                  <label className="flex items-center gap-2 p-2 bg-white rounded-md shadow-sm">
+                    <input
+                      type="checkbox"
+                      checked={achievements.tookSelfie}
+                      onChange={() => toggleAchievement('tookSelfie')}
+                      className="h-4 w-4"
+                    />
+                    <Camera className="h-4 w-4" />
+                    <span>自拍</span>
+                  </label>
+                  <label className="flex items-center gap-2 p-2 bg-white rounded-md shadow-sm">
+                    <input
+                      type="checkbox"
+                      checked={achievements.deletedSocialMedia}
+                      onChange={() => toggleAchievement('deletedSocialMedia')}
+                      className="h-4 w-4"
+                    />
+                    <span>卸载社交软件</span>
+                  </label>
+                  <label className="flex items-center gap-2 p-2 bg-white rounded-md shadow-sm">
+                    <input
+                      type="checkbox"
+                      checked={achievements.reinstalledSocialMedia}
+                      onChange={() => toggleAchievement('reinstalledSocialMedia')}
+                      className="h-4 w-4"
+                    />
+                    <span>重装社交软件</span>
+                  </label>
+                  <label className="flex items-center gap-2 p-2 bg-white rounded-md shadow-sm">
+                    <input
+                      type="checkbox"
+                      checked={achievements.arguedOnline}
+                      onChange={() => toggleAchievement('arguedOnline')}
+                      className="h-4 w-4"
+                    />
+                    <span>网上吵架</span>
+                  </label>
+                  <label className="flex items-center gap-2 p-2 bg-white rounded-md shadow-sm">
+                    <input
+                      type="checkbox"
+                      checked={achievements.wonArgument}
+                      onChange={() => toggleAchievement('wonArgument')}
+                      className="h-4 w-4"
+                    />
+                    <ThumbsUp className="h-4 w-4" />
+                    <span>吵赢了</span>
                   </label>
                 </div>
               </div>
