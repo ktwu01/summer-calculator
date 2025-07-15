@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
-import { Share2, Clock, BookOpen, Sun, Trophy, Award, Gamepad2, Trophy as TrophyIcon, Smartphone, Cloud, Utensils, Heart, Plane, GraduationCap, Briefcase, DollarSign, Music, Film, Dumbbell, Coffee, Moon, Wifi, ShoppingBag, Smile, Frown, Meh, ThumbsUp, ThumbsDown, Battery, Wrench, Bike, Car, Bus, Train, Ship, Anchor, Camera, Headphones, Book, PenTool, Mic, Phone, Mail, MessageSquare, User, Users, Home, Map, Navigation, Compass, Globe, Watch, Calendar, CreditCard, Key, Lock, Unlock, Gift, Bell, Star, Flag, Trash2, Download, Upload, Edit, Copy, Save, Plus, Minus, X, Check, ChevronRight, ChevronLeft, ChevronUp, ChevronDown, ArrowRight, ArrowLeft, ArrowUp, ArrowDown, RotateCw, RefreshCw, Power, Volume2, VolumeX, Sliders, Settings, HelpCircle, AlertCircle, Info, Lightbulb, Zap, Shield, Feather, Droplet, Wind, Thermometer, Umbrella, Leaf, Trees as Tree, Bug, Fish, Bird, Cat, Dog, PawPrint, Wine, Image, Wallet, Package, Eye, Paperclip } from 'lucide-react'
+import { Share2, Clock, BookOpen, Sun, Trophy, Award, Gamepad2, Trophy as TrophyIcon, Smartphone, Cloud, Utensils, Heart, Plane, GraduationCap, Briefcase, DollarSign, Music, Film, Dumbbell, Coffee, Moon, Wifi, ShoppingBag, Smile, Frown, Meh, ThumbsUp, ThumbsDown, Battery, Wrench, Bike, Car, Bus, Train, Ship, Anchor, Camera, Headphones, Book, PenTool, Mic, Phone, Mail, MessageSquare, User, Users, Home, Map, Navigation, Compass, Globe, Watch, Calendar, CreditCard, Key, Lock, Unlock, Gift, Bell, Star, Flag, Trash2, Download, Upload, Edit, Copy, Save, Plus, Minus, X, Check, ChevronRight, ChevronLeft, ChevronUp, ChevronDown, ArrowRight, ArrowLeft, ArrowUp, ArrowDown, RotateCw, RefreshCw, Power, Volume2, VolumeX, Sliders, Settings, HelpCircle, AlertCircle, Info, Lightbulb, Zap, Shield, Feather, Droplet, Wind, Thermometer, Umbrella, Leaf, Trees as Tree, Bug, Fish, Bird, Cat, Dog, PawPrint, Wine, Image, Wallet, Package, Eye, Paperclip, Link2, Bookmark } from 'lucide-react'
 import Countdown from "react-countdown";
 import {
   FacebookShareButton,
@@ -551,6 +551,27 @@ const Index = () => {
     return displays[key] || { name: key, icon: Check };
   };
 
+  // Add new state for copy notification
+  const [showCopyNotification, setShowCopyNotification] = useState(false);
+  
+  // Function to copy URL to clipboard
+  const copyUrlToClipboard = () => {
+    navigator.clipboard.writeText(window.location.href);
+    setShowCopyNotification(true);
+    setTimeout(() => setShowCopyNotification(false), 2000);
+  };
+
+  // Function to bookmark the page
+  const bookmarkPage = () => {
+    if (window.sidebar && window.sidebar.addPanel) { // Firefox
+      window.sidebar.addPanel(document.title, window.location.href, '');
+    } else if (window.external && ('AddFavorite' in window.external)) { // IE
+      window.external.AddFavorite(window.location.href, document.title);
+    } else { // Chrome, Safari, etc.
+      alert('请按 ' + (navigator.userAgent.toLowerCase().indexOf('mac') != -1 ? 'Command/Cmd' : 'CTRL') + ' + D 收藏本页面。');
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-purple-50 py-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
@@ -813,6 +834,65 @@ const Index = () => {
             </div>
           </CardContent>
         </Card>
+
+        {/* 网站信息和分享按钮 */}
+        <div className="mt-8 text-center">
+          <div className="flex justify-center space-x-4 mb-4">
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={copyUrlToClipboard}
+              className="flex items-center gap-2"
+            >
+              <Copy className="h-4 w-4" />
+              复制链接
+            </Button>
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={bookmarkPage}
+              className="flex items-center gap-2"
+            >
+              <Bookmark className="h-4 w-4" />
+              收藏网站
+            </Button>
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => {
+                alert('请使用浏览器的截图功能或按下 PrtSc 键进行截图分享');
+              }}
+              className="flex items-center gap-2"
+            >
+              <Camera className="h-4 w-4" />
+              截图分享
+            </Button>
+          </div>
+          
+          {showCopyNotification && (
+            <div className="fixed bottom-4 right-4 bg-green-500 text-white px-4 py-2 rounded-md shadow-lg">
+              链接已复制到剪贴板！
+            </div>
+          )}
+
+          <footer className="text-center text-gray-500 text-sm mt-8 pb-4">
+            <p>© 2024 暑假价值计算器</p>
+            <p className="mt-2">
+              <Link2 className="h-4 w-4 inline-block mr-1" />
+              <a
+                href={window.location.href}
+                className="text-blue-600 hover:text-blue-800"
+                onClick={(e) => {
+                  e.preventDefault();
+                  copyUrlToClipboard();
+                }}
+              >
+                {window.location.href}
+              </a>
+            </p>
+            <p className="mt-2">欢迎分享给你的朋友！</p>
+          </footer>
+        </div>
       </div>
     </div>
   );
