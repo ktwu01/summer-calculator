@@ -18,10 +18,3 @@ npm run dev
 
 I used 178 on nocode
 https://nocode.cn/#/chat?pageId=bacc2e1fdx3meto3
-
-
-SEO like https://worthjob.zippland.com/
-添加： GitHub 小红书 历史记录
-添加： 广告，google clustrmap 访问量统计
-
-基于此 新建一个 `这b人生过的值不值-做过划掉` 网站。
