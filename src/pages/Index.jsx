@@ -871,12 +871,10 @@ const Index = () => {
             <p>© 2025 这b暑假放的值不值？  
               <Link2 className="h-4 w-4 inline-block mr-1" />
               <a
-                href="https://github.com/ktwu01/summer-calculator/fork"
+                href="https://github.com/ktwu01/summer-calculator"
                 className="text-blue-600 hover:text-blue-800"
-                onClick={(e) => {
-                  e.preventDefault();
-                  copyUrlToClipboard();
-                }}
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 如果觉得好用，请给项目点个⭐Star吧！
               </a>
