@@ -568,7 +568,7 @@ const Index = () => {
     } else if (window.external && ('AddFavorite' in window.external)) { // IE
       window.external.AddFavorite(window.location.href, document.title);
     } else { // Chrome, Safari, etc.
-      alert('请按 ' + (navigator.userAgent.toLowerCase().indexOf('mac') != -1 ? 'Command/Cmd' : 'CTRL') + ' + D 收藏本页面。');
+      alert('请按 ' + (navigator.userAgent.toLowerCase().indexOf('mac') != -1 ? 'Ctrl/Cmd' : 'CTRL') + ' + D 收藏本页面。');
     }
   };
 
@@ -876,11 +876,11 @@ const Index = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                如果觉得好用，请给项目点个⭐Star吧！
+                觉得好用？给这项目点个⭐Star吧！
               </a>
             </p>
             <p className="mt-2">
-              灵感来源于：
+              灵感来源：
               <a
                 href="https://worthjob.zippland.com/"
                 className="text-blue-600 hover:text-blue-800"
