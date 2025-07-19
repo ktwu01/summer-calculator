@@ -8,7 +8,7 @@ const CountdownTimer = ({ targetDate, title }) => {
     }
     return (
       <div className="text-center">
-        <div className="text-4xl md:text-6xl font-bold">
+        <div className="text-xl md:text-5xl font-bold">
           {days}天 {hours}时 {minutes}分 {seconds}秒
         </div>
         <div className="mt-2 text-lg">{title}</div>

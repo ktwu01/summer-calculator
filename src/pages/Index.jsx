@@ -321,7 +321,7 @@ const Index = () => {
     }
     return (
       <div className="flex flex-col items-center">
-        <div className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 text-transparent bg-clip-text">
+        <div className="text-xl md:text-5xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 text-transparent bg-clip-text">
           {days}天 {hours}时 {minutes}分 {seconds}秒
         </div>
         <div className="mt-4 text-xl">
