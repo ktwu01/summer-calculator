@@ -1,4 +1,4 @@
-# Summer Vacation Value Calculator 🎯
+# Summer Vacation Value Calculator
 
 An interesting web application that helps you calculate whether your summer vacation was worth it!
 
@@ -10,7 +10,7 @@ An interesting web application that helps you calculate whether your summer vaca
 
 [![Twitter Follow](https://img.shields.io/twitter/follow/ktwu01?style=social)](https://twitter.com/ktwu01)
 
-## 🎮 How to Use
+## How to Use
 
 1. Set your summer vacation start and end dates
 2. Check off the achievements you've completed
@@ -18,7 +18,7 @@ An interesting web application that helps you calculate whether your summer vaca
 4. View your summer vacation value score and evaluation
 5. Share with your friends to play together
 
-## 💯 Scoring Rules
+## Scoring Rules
 
 ### Base Score (up to 29 points)
 - Have summer homework: calculated based on completion (0-29 points)
@@ -46,7 +46,7 @@ Get 3 points for each small daily task completed, including:
 ### Custom Activities (10 points each)
 - You can add your own summer activities, each adding 10 points
 
-## 🏆 Scoring Standard
+## Scoring Standard
 
 - 0 points: Suggest dropping out
 - 1-28 points: Summer vacation was not worth it

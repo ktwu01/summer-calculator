@@ -15,6 +15,3 @@ npm install
 ```
 npm run dev
 ```
-
-I used 178 on nocode
-https://nocode.cn/#/chat?pageId=bacc2e1fdx3meto3
