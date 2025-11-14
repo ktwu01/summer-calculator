@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
-import { Share2, Clock, BookOpen, Sun, Trophy, Award, Gamepad2, Trophy as TrophyIcon, Smartphone, Cloud, Utensils, Heart, Plane, GraduationCap, Briefcase, DollarSign, Music, Film, Dumbbell, Coffee, Moon, Wifi, ShoppingBag, Smile, Frown, Meh, ThumbsUp, ThumbsDown, Battery, Wrench, Bike, Car, Bus, Train, Ship, Anchor, Camera, Headphones, Book, PenTool, Mic, Phone, Mail, MessageSquare, User, Users, Home, Map, Navigation, Compass, Globe, Watch, Calendar, CreditCard, Key, Lock, Unlock, Gift, Bell, Star, Flag, Trash2, Download, Upload, Edit, Copy, Save, Plus, Minus, X, Check, ChevronRight, ChevronLeft, ChevronUp, ChevronDown, ArrowRight, ArrowLeft, ArrowUp, ArrowDown, RotateCw, RefreshCw, Power, Volume2, VolumeX, Sliders, Settings, HelpCircle, AlertCircle, Info, Lightbulb, Zap, Shield, Feather, Droplet, Wind, Thermometer, Umbrella, Leaf, Trees as Tree, Bug, Fish, Bird, Cat, Dog, PawPrint, Wine, Image, Wallet, Package, Eye, Paperclip, Link2, Bookmark } from 'lucide-react'
+import { Share2, Clock, BookOpen, Sun, Trophy, Award, Gamepad2, Trophy as TrophyIcon, Smartphone, Cloud, Utensils, Heart, Plane, GraduationCap, Briefcase, DollarSign, Music, Film, Dumbbell, Coffee, Moon, Wifi, ShoppingBag, Smile, Frown, Meh, ThumbsUp, ThumbsDown, Battery, Wrench, Bike, Car, Bus, Train, Ship, Anchor, Camera, Headphones, Book, PenTool, Mic, Phone, Mail, MessageSquare, User, Users, Home, Map, Navigation, Compass, Globe, Watch, Calendar, CreditCard, Key, Lock, Unlock, Gift, Bell, Star, Flag, Trash2, Download, Upload, Edit, Copy, Save, Plus, Minus, X, Check, ChevronRight, ChevronLeft, ChevronUp, ChevronDown, ArrowRight, ArrowLeft, ArrowUp, ArrowDown, RotateCw, RefreshCw, Power, Volume2, VolumeX, Sliders, Settings, HelpCircle, AlertCircle, Info, Lightbulb, Zap, Shield, Feather, Droplet, Wind, Thermometer, Umbrella, Leaf, Trees as Tree, Bug, Fish, Bird, Cat, Dog, PawPrint, Wine, Image, Wallet, Package, Eye, Paperclip, Link2, Bookmark, Github, GitFork } from 'lucide-react'
 import Countdown from "react-countdown";
 import {
   FacebookShareButton,
@@ -576,9 +576,55 @@ const Index = () => {
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-purple-50 py-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
         {/* 导航栏 */}
-        <div className="flex justify-center items-center mb-8">
+        <div className="flex flex-col sm:flex-row justify-between items-center mb-8 gap-4">
           <h1 className="text-4xl md:text-5xl font-bold text-blue-800">这b暑假放的值不值</h1>
-          {/* 删除按钮部分 */}
+          <div className="flex gap-2">
+            <Button
+              variant="outline"
+              size="sm"
+              asChild
+              className="flex items-center gap-2"
+            >
+              <a
+                href="https://github.com/ktwu01/summer-calculator"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Github className="h-4 w-4" />
+                <span className="hidden sm:inline">GitHub</span>
+              </a>
+            </Button>
+            <Button
+              variant="outline"
+              size="sm"
+              asChild
+              className="flex items-center gap-2 bg-green-50 hover:bg-green-100 border-green-300"
+            >
+              <a
+                href="https://github.com/ktwu01/summer-calculator/fork"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <GitFork className="h-4 w-4 text-green-700" />
+                <span className="hidden sm:inline text-green-700">Fork</span>
+              </a>
+            </Button>
+            <Button
+              variant="outline"
+              size="sm"
+              asChild
+              className="flex items-center gap-2"
+            >
+              <a
+                href="https://github.com/ktwu01/summer-calculator"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Star className="h-4 w-4" />
+                <span className="hidden sm:inline">Star</span>
+              </a>
+            </Button>
+          </div>
         </div>
 
         {/* 倒计时卡片 */}
