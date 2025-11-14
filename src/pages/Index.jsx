@@ -37,10 +37,10 @@ const Index = () => {
 
   // 暑假时间配置
   const [summerVacationStart, setSummerVacationStart] = useState(() => 
-    new Date(loadFromLocalStorage('summerVacationStart', "2025-07-01"))
+    new Date(loadFromLocalStorage('summerVacationStart', "2026-07-01"))
   );
   const [summerVacationEnd, setSummerVacationEnd] = useState(() => 
-    new Date(loadFromLocalStorage('summerVacationEnd', "2025-09-06"))
+    new Date(loadFromLocalStorage('summerVacationEnd', "2026-09-06"))
   );
 
   const [hasHomework, setHasHomework] = useState(() => 

@@ -13,10 +13,13 @@ const CHAT_VARIABLE = process.env.CHAT_VARIABLE || '';
 const PUBLIC_PATH = process.env.PUBLIC_PATH || '';
 
 const isProdEnv = process.env.NODE_ENV === 'production';
-const publicPath = (isProdEnv && CHAT_VARIABLE)
+// For GitHub Pages deployment
+const publicPath = isProdEnv && !CHAT_VARIABLE
+  ? '/summer-calculator/'
+  : (isProdEnv && CHAT_VARIABLE)
   ? PUBLIC_PATH + '/' + CHAT_VARIABLE
   : PUBLIC_PATH + '/';
-const outDir = (isProdEnv && CHAT_VARIABLE) ? 'build/' + CHAT_VARIABLE : 'build';
+const outDir = (isProdEnv && CHAT_VARIABLE) ? 'build/' + CHAT_VARIABLE : 'dist';
 const plugins = isProdEnv
   ? CHAT_VARIABLE
     ? [react(), prodHtmlTransformer(CHAT_VARIABLE)]
